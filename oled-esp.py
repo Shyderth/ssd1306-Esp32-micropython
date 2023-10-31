@@ -9,8 +9,7 @@ oled = SSD1306_I2C(oled_width, oled_height, i2c)
 
 bt1 = Pin(12, Pin.IN)
 bt2 = Pin(13, Pin.IN)
-bt3 = Pin(34, Pin.IN)
-bt4 = Pin(35, Pin.IN)
+
 
 oled.text('Hola Mundo!', 10, 10)
 oled.show()
@@ -41,12 +40,6 @@ while True :
         if(x>oled_width-1):
             x=-w
             
-    if bt3.value():
-        y+=2
-        
-    if bt4.value():
-        y-=2
-    
     oled.rect(x ,y ,w ,h ,1)
     oled.show()
     oled.fill(0)
